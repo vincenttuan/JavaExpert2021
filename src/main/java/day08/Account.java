@@ -8,6 +8,7 @@ package day08;
     ---------------------------
     存款: deposit(int amount)
     提款: withdraw(int amount)
+    轉帳: transfer(int amount, Account act)
     明細: print()
 */
 public class Account {
@@ -27,6 +28,12 @@ public class Account {
         deposit(balance);
     }
     
+    // 建構子 3
+    public Account(String name) {
+        System.out.println("建構子 3");
+        this.name = name;
+    }
+    
     // 存款方法
     void deposit(int amount) {
         if(amount >= 0) {
@@ -38,6 +45,17 @@ public class Account {
     void withdraw(int amount) {
         if(amount >= 0) {
             balance -= amount; //balance = balance - amount;
+        }
+    }
+    
+    // 轉帳方法
+    void transfer(int amount, Account act) {
+        // 驗證是否有足夠的金額可以轉
+        if(amount <= balance) {
+            // 轉出方: 提款
+            withdraw(amount);
+            // 轉入方(act): 存款
+            act.deposit(amount);
         }
     }
     
