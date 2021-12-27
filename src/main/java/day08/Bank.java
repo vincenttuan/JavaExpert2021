@@ -41,7 +41,7 @@ public class Bank {
         accounts.remove(account);
     }
     
-    // 印出全部帳戶資料
+    // 印出銀行全部帳戶資料
     void print() {
         for(Account act : accounts) {
             act.print();
