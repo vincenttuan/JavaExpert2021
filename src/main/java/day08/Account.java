@@ -12,7 +12,7 @@ package day08;
 */
 public class Account {
     String name;
-    int balance;
+    private int balance; // 不允許直接修改屬性
     void deposit(int amount) {
         if(amount >= 0) {
             balance += amount; //balance = balance + amount;
@@ -24,6 +24,6 @@ public class Account {
         }
     }
     void print() {
-        System.out.printf("%s 帳戶餘額: $%d\n", name, balance);
+        System.out.printf("%s 帳戶餘額: $%,d\n", name, balance);
     }
 }
