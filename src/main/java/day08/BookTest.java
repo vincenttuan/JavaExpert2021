@@ -8,7 +8,13 @@ public class BookTest {
         
         Book b2 = new Book("Python", 150);
         
-        System.out.println(b1.getName() + " $" + b1.getPrice());
-        System.out.println(b2.getName() + " $" + b2.getPrice());
+        //System.out.println(b1.getName() + " $" + b1.getPrice());
+        //System.out.println(b2.getName() + " $" + b2.getPrice());
+        
+        System.out.println(b1);
+        System.out.println(b2);
+        
+        //System.out.println(b1.toString());
+        //System.out.println(b2.toString());
     }
 }

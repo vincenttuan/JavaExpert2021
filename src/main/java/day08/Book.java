@@ -36,4 +36,10 @@ public class Book {
             this.price = price;
         } 
     }
+    
+    // 覆寫/改寫 toString()
+    @Override
+    public String toString() {
+        return name + " $" + price;
+    }
 }
