@@ -17,7 +17,11 @@ public class BookStoreTest {
         // 印出所有書籍
         System.out.println(books);
         // 該書店的書籍共有幾本
-        System.out.println(books.size());
+        System.out.println("書籍數量: " + books.size());
+        // 該書店的書籍總價
+        int total = 0;
+        
+        System.out.println("書籍總價: " + total);
         
         // 修改 Java 的價格為 500 元
         bookStore.updateBookPriceByName("Java", 500);
