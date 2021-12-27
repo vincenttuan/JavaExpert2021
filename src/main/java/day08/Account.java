@@ -43,7 +43,8 @@ public class Account {
     
     // 提款方法
     void withdraw(int amount) {
-        if(amount >= 0) {
+        // 提款金額 >=0 以及 提款金額 <= 帳戶餘額
+        if(amount >= 0 && amount <= balance) {
             balance -= amount; //balance = balance - amount;
         }
     }
