@@ -14,7 +14,13 @@ package day08;
 public class Book {
     private String name;
     private int price;
-    
+    // 建構子封裝
+    public Book() {
+    }
+    public Book(String name, int price) {
+        setName(name);
+        setPrice(price);
+    }
     // 方法封裝
     public String getName() {
         return name;
