@@ -10,5 +10,8 @@ public class AccountTest {
         act.print();
         act.withdraw(3000); // 提款 3000
         act.print();
+        //------------------------------------------
+        Account act2 = new Account("Mary", 8000);
+        
     }
 }

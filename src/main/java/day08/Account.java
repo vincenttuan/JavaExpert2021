@@ -13,6 +13,17 @@ package day08;
 public class Account {
     String name;
     private int balance; // 不允許直接修改屬性
+    
+    // 建構子 1
+    public Account() {
+        System.out.println("建構子 1");
+    }
+    
+    // 建構子 2
+    public Account(String name, int balance) {
+        System.out.println("建構子 2");
+    }
+    
     void deposit(int amount) {
         if(amount >= 0) {
             balance += amount; //balance = balance + amount;
@@ -24,6 +35,7 @@ public class Account {
         }
     }
     void print() {
-        System.out.printf("%s 帳戶餘額: $%,d\n", name, balance);
+        System.out.printf("%s 帳戶餘額: $%,d\n", 
+                          name, balance);
     }
 }
