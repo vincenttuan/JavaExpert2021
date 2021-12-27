@@ -39,4 +39,12 @@ public class BookStore {
         }
     }
     
+    // 取得書籍總價
+    public int getTotalPrice() {
+        int total = 0;
+        for(Book book : books) {
+            total += book.getPrice();
+        }
+        return total;
+    }
 }
