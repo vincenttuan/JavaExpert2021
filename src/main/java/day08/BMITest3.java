@@ -15,5 +15,12 @@ public class BMITest3 {
         b2.w = 42.0;
         b2.setBMI();
         b2.print();
+        
+        // 分析
+        System.out.println("分析...");
+        BMI[] bmis = {b1, b2};
+        for(BMI bmi : bmis) { // for-in(each)
+            System.out.printf("%s BMI: %.2f\n", bmi.name, bmi.bmi); 
+        }
     }
 }
