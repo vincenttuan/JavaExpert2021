@@ -1,7 +1,15 @@
 package day08;
 
 import java.util.ArrayList;
-
+/*
+    銀行物件
+    ---------------------------
+    所有帳戶: accounts
+    ---------------------------
+    開戶: addAccount(String name, int balance)
+    取得帳戶: getAccount(String name)
+    移除帳戶: removeAccount(String name)
+*/
 public class Bank {
     // 所有帳戶
     private ArrayList<Account> accounts = new ArrayList<>();
@@ -14,11 +22,11 @@ public class Bank {
     
     // 取得帳戶
     Account getAccount(String name) {
-        Account account = null;
+        Account account = null; // 先假設還沒有資料
         for(Account act : accounts) {
             // 帳戶名比對
             if(act.name.equals(name)) {
-                account = act;
+                account = act; // 得到資料
                 break;
             }
         }
