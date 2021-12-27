@@ -28,6 +28,7 @@ public class BMITest3 {
             //BMI bmi = bmis[i];
             //System.out.printf("%s BMI: %.2f\n", bmi.name, bmi.bmi);
             System.out.printf("%s BMI: %.2f\n", bmis[i].name, bmis[i].bmi);
-        }        
+        }
+        
     }
 }
