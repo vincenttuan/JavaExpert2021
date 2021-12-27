@@ -16,11 +16,18 @@ public class BMITest3 {
         b2.setBMI();
         b2.print();
         
-        // 分析
+        // 分析 I
         System.out.println("分析...");
         BMI[] bmis = {b1, b2};
         for(BMI bmi : bmis) { // for-in(each)
             System.out.printf("%s BMI: %.2f\n", bmi.name, bmi.bmi); 
         }
+        
+        // 分析 II
+        for(int i=0;i<bmis.length;i++) {
+            //BMI bmi = bmis[i];
+            //System.out.printf("%s BMI: %.2f\n", bmi.name, bmi.bmi);
+            System.out.printf("%s BMI: %.2f\n", bmis[i].name, bmis[i].bmi);
+        }        
     }
 }
