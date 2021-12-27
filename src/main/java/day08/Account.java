@@ -22,18 +22,26 @@ public class Account {
     // 建構子 2
     public Account(String name, int balance) {
         System.out.println("建構子 2");
+        this.name = name;
+        //this.balance = balance;
+        deposit(balance);
     }
     
+    // 存款方法
     void deposit(int amount) {
         if(amount >= 0) {
             balance += amount; //balance = balance + amount;
         }
     }
+    
+    // 提款方法
     void withdraw(int amount) {
         if(amount >= 0) {
             balance -= amount; //balance = balance - amount;
         }
     }
+    
+    // 列印資料
     void print() {
         System.out.printf("%s 帳戶餘額: $%,d\n", 
                           name, balance);

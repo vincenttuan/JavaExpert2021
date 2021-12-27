@@ -12,6 +12,6 @@ public class AccountTest {
         act.print();
         //------------------------------------------
         Account act2 = new Account("Mary", 8000);
-        
+        act2.print();
     }
 }
