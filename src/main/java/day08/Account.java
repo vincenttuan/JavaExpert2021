@@ -52,7 +52,7 @@ public class Account {
     // 轉帳方法
     void transfer(int amount, Account act) {
         // 驗證是否有足夠的金額可以轉
-        if(amount <= balance) {
+        if(amount >= 0 && amount <= balance) {
             // 轉出方: 提款
             withdraw(amount);
             // 轉入方(act): 存款
