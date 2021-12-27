@@ -38,6 +38,6 @@ public class Bank {
         // 1. 先取得帳戶
         Account account = getAccount(name);
         // 2. 再移除帳戶
-        accounts.remove(name);
+        accounts.remove(account);
     }
 }
