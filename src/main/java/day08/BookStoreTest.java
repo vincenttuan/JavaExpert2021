@@ -24,5 +24,9 @@ public class BookStoreTest {
         // 重新找到並印出目前所有書籍
         System.out.println(bookStore.findAllBooks());
         
+        // 刪除 Python 這一本書
+        bookStore.removeBookByName("Python");
+        // 重新找到並印出目前所有書籍
+        System.out.println(bookStore.findAllBooks());
     }
 }
