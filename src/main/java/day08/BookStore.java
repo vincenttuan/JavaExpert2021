@@ -31,4 +31,12 @@ public class BookStore {
             books.remove(book);
         }
     }
+    // 修改價格
+    public void updateBookPriceByName(String name, int newPrice) {
+        Book book = getBookByName(name);
+        if(book != null) {
+            book.setPrice(newPrice); // 修改價格
+        }
+    }
+    
 }
