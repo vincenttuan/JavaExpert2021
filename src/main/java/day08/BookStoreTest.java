@@ -20,7 +20,9 @@ public class BookStoreTest {
         System.out.println("書籍數量: " + books.size());
         // 該書店的書籍總價
         int total = 0;
-        
+        for(Book b : books) {
+            total += b.getPrice();
+        }
         System.out.println("書籍總價: " + total);
         
         // 修改 Java 的價格為 500 元
