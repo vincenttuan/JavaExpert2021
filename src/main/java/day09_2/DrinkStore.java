@@ -26,6 +26,32 @@ public class DrinkStore {
         products.add(product);
     }
     
+    // 取得 Dessert 商品
+    public Dessert getDessertByName(String name) {
+        Dessert dessert = null;
+        for (Product product : products) {
+            if(product.getClass().getSimpleName().equals("Dessert") && 
+                    product.getName().equals(name)) {
+                dessert = (Dessert)product;
+                break;
+            }
+        }
+        return dessert;
+    }
+    
+    // 取得 Drink 商品
+    public Drink getDrinkByName(String name) {
+        Drink drink = null;
+        for (Product product : products) {
+            if(product.getClass().getSimpleName().equals("Drink") && 
+                    product.getName().equals(name)) {
+                drink = (Drink)product;
+                break;
+            }
+        }
+        return drink;
+    }
+    
     public ArrayList<Product> getProducts() {
         return products;
     }
