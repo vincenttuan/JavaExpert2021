@@ -20,7 +20,12 @@ public class DrinkStore {
         products.add(cake);
         products.add(cookie);
     }
-
+    
+    // 增加商品
+    public void addProduct(Product product) {
+        products.add(product);
+    }
+    
     public ArrayList<Product> getProducts() {
         return products;
     }
@@ -37,7 +42,7 @@ public class DrinkStore {
                 case "Drink":
                     capacity = ((Drink)product).getCapacity() + "";
                     break;
-                case "Dessert":
+                case "Dessert":  
                     size = ((Dessert)product).getSize();
                     break;
             }
