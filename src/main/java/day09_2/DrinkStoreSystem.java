@@ -28,7 +28,13 @@ public class DrinkStoreSystem {
                 break;
             case 2:
                 addDrink();
-                break;    
+                break; 
+            case 3:
+                updateDessertPrice();
+                break;
+            case 5:
+                deleteDessert();
+                break;
             case 7:
                 ds.print();
                 break;
@@ -59,7 +65,24 @@ public class DrinkStoreSystem {
         Drink drink = new Drink(capacity, name, price);
         ds.addProduct(drink);
     }
-
+    
+    private static void updateDessertPrice() {
+        System.out.println("修改 Dessert 價格 請依序輸入 name price:");
+        System.out.println("範例：Cookie 25");
+        Scanner sc = new Scanner(System.in);
+        String name = sc.next();
+        Integer price = sc.nextInt();
+        ds.updateDessertPriceByName(name, price);
+    }
+    
+    private static void deleteDessert() {
+        System.out.println("刪除 Dessert 請輸入 name:");
+        System.out.println("範例：Cookie");
+        Scanner sc = new Scanner(System.in);
+        String name = sc.next();
+        ds.deleteDessertByName(name);
+    }
+    
     public static void main(String[] args) {
         System.out.println("程式開始...");
         while (!stop) {
