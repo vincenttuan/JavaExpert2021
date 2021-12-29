@@ -23,7 +23,11 @@ public class Student extends Person {
 
     @Override
     public String toString() {
-        return "Student{" + "number=" + number + '}';
+        return String.format("%s{number=%d, name=%s, age=%d}", 
+                            getClass().getSimpleName(),
+                            getNumber(),
+                            getName(),
+                            getAge());
     }
 
     

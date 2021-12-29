@@ -23,7 +23,11 @@ public class Teacher extends Person {
 
     @Override
     public String toString() {
-        return "Teacher{" + "salary=" + salary + '}';
+        return String.format("%s{salary=%d, name=%s, age=%d}", 
+                             getClass().getSimpleName(),
+                             getSalary(),
+                             getName(),
+                             getAge());
     }
     
 }

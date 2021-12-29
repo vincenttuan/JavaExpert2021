@@ -7,7 +7,7 @@ public class Test2 {
         Student s3 = new Student(97003, "Jane", 18);
         Teacher t1 = new Teacher(70000, "Helen", 30);
         
-        Person[] persons = {s1, s2, s3, t1};
+        Person[] persons = {s1, s2, s3, t1}; // 靜態陣列
         System.out.printf("人數: %d\n", persons.length);
         // 列出所有人的姓名與年齡
         for(Person person : persons) {
