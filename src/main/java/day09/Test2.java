@@ -13,6 +13,14 @@ public class Test2 {
         for(Person person : persons) {
             System.out.printf("姓名: %s 年齡: %d\n", person.getName(), person.getAge());
         }
+        // 計算平均年齡
+        int sumOfAge = 0; // 年齡的總和
+        for(Person person : persons) {
+            sumOfAge += person.getAge(); // 年齡利用 += 進行累加
+        }
+        System.out.printf("總年齡: %d\n", sumOfAge);
+        double avgOfAge = (double)sumOfAge / persons.length;
+        System.out.printf("平均年齡: %.1f\n", avgOfAge);
         
     }
 }
