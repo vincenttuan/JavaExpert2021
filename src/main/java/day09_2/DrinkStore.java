@@ -26,13 +26,11 @@ public class DrinkStore {
     }
     
     public void print() {
-        // Drink{capacity=250, name=Tea, price=20}
-        // Dessert{size=大, name=Cookie, price=15
         System.out.println("+---------+------+----------+---------+-------+");
         System.out.println("|  Type   | Size | Capacity |   Name  | Price |");
         System.out.println("+---------+------+----------+---------+-------+");
         for (Product product : products) {
-            System.out.printf("| %7s | %4s | %8s | %7s | %5s |\n", 
+            System.out.printf("| %-7s | %4s | %-8s | %-7s | %5s |\n", 
                               product.getClass().getSimpleName(),
                               "",
                               "",
