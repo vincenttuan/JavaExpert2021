@@ -52,6 +52,26 @@ public class DrinkStore {
         return drink;
     }
     
+    // 修改 Dessert 商品價格
+    public void updateDessertPriceByName(String name, Integer price) {
+        // 1. 先取得 Dessert 物件
+        Dessert dessert = getDessertByName(name);
+        if(dessert != null) {
+            // 2. 修改價格
+            dessert.setPrice(price);
+        }
+    }
+    
+    // 修改 Drink 商品價格
+    public void updateDrinkPriceByName(String name, Integer price) {
+        // 1. 先取得 Drink 物件
+        Drink drink = getDrinkByName(name);
+        if(drink != null) {
+            // 2. 修改價格
+            drink.setPrice(price);
+        }
+    }
+    
     public ArrayList<Product> getProducts() {
         return products;
     }
