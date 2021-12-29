@@ -72,6 +72,22 @@ public class DrinkStore {
         }
     }
     
+    // 刪除 Dessert 商品
+    public void deleteDessertByName(String name) {
+        Dessert dessert = getDessertByName(name);
+        if(dessert != null) {
+            products.remove(dessert);
+        }
+    }
+    
+    // 刪除 Drink 商品
+    public void deleteDrinkByName(String name) {
+        Drink drink = getDrinkByName(name);
+        if(drink != null) {
+            products.remove(drink);
+        }
+    }
+    
     public ArrayList<Product> getProducts() {
         return products;
     }

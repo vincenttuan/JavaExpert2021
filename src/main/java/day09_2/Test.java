@@ -21,8 +21,8 @@ public class Test {
         }
         
         // 想要修改 Cookie 的價格由 25 -> 35 (Part II)
-        //ds.updateDessertPriceByName("Cookie", 35);
-        
+        ds.updateDessertPriceByName("Cookie", 35);
+        ds.print();
         
     }
 }
