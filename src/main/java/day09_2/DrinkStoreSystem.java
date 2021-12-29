@@ -32,9 +32,15 @@ public class DrinkStoreSystem {
             case 3:
                 updateDessertPrice();
                 break;
+            case 4:
+                // homework()
+                break;
             case 5:
                 deleteDessert();
                 break;
+            case 6:
+                // homework()
+                break;    
             case 7:
                 ds.print();
                 break;
