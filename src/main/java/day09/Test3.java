@@ -19,5 +19,32 @@ public class Test3 {
         persons.add(t2);
         System.out.println(persons);
         
+        // 算出 Person 平均年齡
+        double avgOfAge = 0;
+        int sumOfAge = 0;
+        for(Person person : persons) {
+            sumOfAge += person.getAge();
+        }
+        avgOfAge = (double)sumOfAge / persons.size();
+        System.out.printf("Person 平均年齡: %.1f\n", avgOfAge);
+        
+        // 算出 Student 平均年齡
+        sumOfAge = 0; // 歸零
+        avgOfAge = 0; // 歸零
+        int countOfStudent = 0; // 學生的數量
+        for(Person person : persons) {
+            //System.out.println(person.getClass().getSimpleName());
+            // 判斷 person 物件是否是學生 Student ?
+            if(person.getClass().getSimpleName().equals("Student")) {
+                sumOfAge += person.getAge();
+                countOfStudent++;
+            }
+        }
+        avgOfAge = (double)sumOfAge/countOfStudent;
+        System.out.printf("學生的個數: %d\n", countOfStudent);
+        System.out.printf("學生總年齡: %d\n", sumOfAge);
+        System.out.printf("學生平均年齡: %.1f\n", avgOfAge);
+        
+        
     }
 }
