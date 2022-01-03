@@ -13,8 +13,13 @@ public class Company {
     // 印出每位員工的薪資與工作內容
     public void print() {
         for(Employee employee : employees) {
-            System.out.printf("薪資：%d 工作內容：", employee.getSalary());
+            System.out.printf("薪資：%,d 工作內容：", employee.getSalary());
             employee.job();
         }
+    }
+    
+    // 取得所有員工的資料
+    public ArrayList<Employee> getEmployees() {
+        return employees;
     }
 }

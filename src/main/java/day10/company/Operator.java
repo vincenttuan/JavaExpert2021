@@ -1,5 +1,7 @@
 package day10.company;
 
+import java.util.ArrayList;
+
 public class Operator implements Employee {
     private int salary;
     
@@ -16,4 +18,6 @@ public class Operator implements Employee {
     public int getSalary() {
         return salary;
     }
+
+    
 }

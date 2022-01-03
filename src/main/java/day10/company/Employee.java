@@ -8,4 +8,5 @@ public interface Employee {
     public void job();
     // 薪資
     public int getSalary();
+    
 }
