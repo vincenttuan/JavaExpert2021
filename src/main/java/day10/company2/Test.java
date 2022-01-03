@@ -28,5 +28,10 @@ public class Test {
         company.delete(0);
         // 列印員工資料
         company.print();
+        // 修改薪資
+        System.out.println("修改 index = 4 的員工薪資改為 $33,000");
+        company.updateSalary(4, 33000);
+        // 列印員工資料
+        company.print();
     }
 }

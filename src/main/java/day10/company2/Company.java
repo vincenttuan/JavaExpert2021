@@ -15,6 +15,11 @@ public class Company {
         employees.remove(index);
     }
     
+    // 修改薪資
+    public void updateSalary(int index, int newSalary) {
+        ((EmployeeImpl)employees.get(index)).setSalary(newSalary);
+    }
+    
     // 列印
     public void print() {
         int index = 0;

@@ -11,4 +11,7 @@ public abstract class EmployeeImpl implements Employee {
         return salary;
     }
     
+    public void setSalary(int salary) {
+        this.salary = salary;
+    }
 }
