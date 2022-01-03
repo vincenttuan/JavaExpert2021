@@ -10,10 +10,16 @@ public class Company {
         employees.add(employee);
     }
     
+    // 刪除員工
+    public void delete(int index) {
+        employees.remove(index);
+    }
+    
     // 列印
     public void print() {
+        int index = 0;
         for(Employee employee : employees) {
-            System.out.printf("薪資: $%,d 工作內容: ", employee.getSalary());
+            System.out.printf("index=%d 薪資: $%,d 工作內容: ", index++, employee.getSalary());
             employee.job();
         }
     }

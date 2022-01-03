@@ -23,6 +23,10 @@ public class Test {
         System.out.printf("薪資總合: $%,d\n", company.getSumOfSalary());
         // 薪資平均
         System.out.printf("薪資平均: $%,.1f\n", company.getAvgOfSalary());
-        
+        // 刪除員工
+        System.out.println("刪除 index = 0 的員工");
+        company.delete(0);
+        // 列印員工資料
+        company.print();
     }
 }
