@@ -1,5 +1,7 @@
 package day10.zoo;
 
+import java.util.ArrayList;
+
 public class Test {
     public static void main(String[] args) {
         // 建立商品店
@@ -20,5 +22,23 @@ public class Test {
         giftShop.launch(f2);
         // 列印商品
         giftShop.print();
+        // 請問 Bird 種類商品有哪些 ?
+        ArrayList<Animal> animals = giftShop.getAnimals();
+        // case 1:
+        for(Animal animal : animals) {
+            if(animal.getClass().getSimpleName().equals("Bird")) {
+                System.out.println(animal);
+            }
+            if(animal.getClass().getSimpleName().equals("Ostrich")) {
+                System.out.println(animal);
+            }
+        }
+        // case 2 (判斷速度快):
+        for(Animal animal : animals) {
+            if(animal instanceof Bird) {
+                System.out.println(animal);
+            }
+        }
+        
     }
 }
