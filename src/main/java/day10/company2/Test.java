@@ -19,6 +19,10 @@ public class Test {
         company.add(o2);
         // 列印員工資料
         company.print();
+        // 薪資總合
+        System.out.printf("薪資總合: $%,d\n", company.getSumOfSalary());
+        // 薪資平均
+        System.out.printf("薪資平均: $%,.1f\n", company.getAvgOfSalary());
         
     }
 }
