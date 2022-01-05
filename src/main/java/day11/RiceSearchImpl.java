@@ -3,6 +3,7 @@ package com.study.day11;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 import java.util.stream.Collectors;
 
@@ -35,16 +36,14 @@ public class RiceSearchImpl implements RiceSearch {
 	}
 
 	@Override
-	public Rice[] getRices(String keyword) {
-		Arrays.stream(rices) // 轉串流（目的：進行分析）
+	public List<Rice> getRices(String keyword) {
+		return Arrays.stream(rices) // 轉串流（目的：進行分析）
 			.filter(rice -> rice.品名.contains(keyword)) // filter 過濾
-			.collect(Collectors.toList()) // 收集為一個集合
-			.toArray(rices); // 將集合轉陣列
-		return rices;
+			.collect(Collectors.toList());
 	}
 
 	@Override
-	public int getRowCount() {
+	public int getRowCount() { // 所有資料的筆數
 		if(rices == null) {
 			return 0;
 		}
