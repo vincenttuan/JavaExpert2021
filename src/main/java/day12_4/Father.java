@@ -14,7 +14,7 @@ public class Father implements Runnable {
 		t.start();
 		// 爸爸要等待工人
 		try {
-			t.join();
+			t.join(10_000); // 最多可以等待 10 秒
 		} catch (InterruptedException e) {
 			System.out.println(e);
 		}
