@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.FutureTask;
+import static java.util.stream.Collectors.toList;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonArray;
@@ -16,6 +17,7 @@ public class ServiceImpl implements Service {
 	private List<Youbike> youbikes = new ArrayList<>();
 	
 	// 更新最新 youbikes 資料
+	@Override
 	public void updateYoubikes() {
 		WebCrawler webCrawler = new WebCrawler();
 		FutureTask<String> task = new FutureTask<>(webCrawler);
@@ -41,32 +43,42 @@ public class ServiceImpl implements Service {
 		Youbike[] youbikeArray = new Gson().fromJson(records, Youbike[].class);
 		// 4. 透過 Arrays.asList 將靜態陣列轉為動態陣列
 		youbikes = Arrays.asList(youbikeArray);
-		System.out.println(youbikes);
-		System.out.println(youbikes.size());
+		//System.out.println(youbikes);
+		//System.out.println(youbikes.size());
 	}
 	
 	@Override
 	public List<Youbike> queryYoubikes() {
-		// TODO Auto-generated method stub
-		return null;
+		return youbikes;
 	}
 
 	@Override
 	public List<Youbike> queryYoubikes(String snaKeyword) {
-		// TODO Auto-generated method stub
-		return null;
+		return youbikes.stream()
+				.filter(youbike -> youbike.sna.contains(snaKeyword))
+				.collect(toList());
 	}
 
 	@Override
 	public List<Youbike> queryByGatherThenSbi(Integer amount) {
-		// TODO Auto-generated method stub
-		return null;
+		return youbikes.stream()
+				.filter(youbike -> youbike.sbi >= amount)
+				.collect(toList());
 	}
 
 	@Override
 	public List<Youbike> queryByGatherThenBemp(Integer amount) {
-		// TODO Auto-generated method stub
-		return null;
+		return youbikes.stream()
+				.filter(youbike -> youbike.bemp >= amount)
+				.collect(toList());
+	}
+	
+	@Override
+	public void print(List<Youbike> youbikes) {
+		for(Youbike youbike : youbikes) {
+			System.out.printf("%s 可借：%d 可還：%d\n", 
+							youbike.sna, youbike.sbi, youbike.bemp);
+		}
 	}
 
 }

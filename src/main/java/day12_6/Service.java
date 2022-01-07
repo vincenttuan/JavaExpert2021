@@ -7,4 +7,6 @@ public interface Service {
 	List<Youbike> queryYoubikes(String snaKeyword);
 	List<Youbike> queryByGatherThenSbi(Integer amount);
 	List<Youbike> queryByGatherThenBemp(Integer amount);
+	void updateYoubikes();
+	void print(List<Youbike> youbikes);
 }
