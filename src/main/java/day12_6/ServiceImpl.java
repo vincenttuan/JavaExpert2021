@@ -76,8 +76,13 @@ public class ServiceImpl implements Service {
 	@Override
 	public void print(List<Youbike> youbikes) {
 		for(Youbike youbike : youbikes) {
-			System.out.printf("%s 可借：%d 可還：%d\n", 
-							youbike.sna, youbike.sbi, youbike.bemp);
+			if(youbike.d == null) {
+				System.out.printf("%s 可借：%d 可還：%d\n", 
+								youbike.sna, youbike.sbi, youbike.bemp);
+			} else {
+				System.out.printf("%s 可借：%d 可還：%d 距離：%.1f\n", 
+						youbike.sna, youbike.sbi, youbike.bemp, youbike.d);
+			}
 		}
 	}
 
@@ -86,6 +91,7 @@ public class ServiceImpl implements Service {
 		return youbikes.stream()
 				.filter(youbike -> {
 					double d = MapUtils.algorithm(my_lng, my_lat, youbike.lng, youbike.lat);
+					youbike.d = d;
 					return d <= m;
 				})
 				.collect(toList());

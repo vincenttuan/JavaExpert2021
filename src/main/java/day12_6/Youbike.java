@@ -11,11 +11,14 @@ public class Youbike {
 	Double lng;  // 經度
 	String ar;   // 中文地址
 	String mday; // 資料更新時間
+	Double d; // 站點距離使用者的位置
 	
 	@Override
 	public String toString() {
 		return "Youbike [_id=" + _id + ", sno=" + sno + ", sna=" + sna + ", tot=" + tot + ", sbi=" + sbi + ", bemp="
-				+ bemp + ", lat=" + lat + ", lng=" + lng + ", ar=" + ar + ", mday=" + mday + "]";
+				+ bemp + ", lat=" + lat + ", lng=" + lng + ", ar=" + ar + ", mday=" + mday + ", d=" + d + "]";
 	}
+	
+	
 	
 }
