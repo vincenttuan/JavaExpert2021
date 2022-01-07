@@ -42,6 +42,7 @@ public class ServiceImpl implements Service {
 		// 4. 透過 Arrays.asList 將靜態陣列轉為動態陣列
 		youbikes = Arrays.asList(youbikeArray);
 		System.out.println(youbikes);
+		System.out.println(youbikes.size());
 	}
 	
 	@Override
