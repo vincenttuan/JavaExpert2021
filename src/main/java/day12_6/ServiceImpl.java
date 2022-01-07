@@ -83,8 +83,12 @@ public class ServiceImpl implements Service {
 
 	@Override
 	public List<Youbike> queryByDistance(Double my_lat, Double my_lng, Double m) {
-		// TODO Auto-generated method stub
-		return null;
+		return youbikes.stream()
+				.filter(youbike -> {
+					double d = MapUtils.algorithm(my_lng, my_lat, youbike.lng, youbike.lat);
+					return d <= m;
+				})
+				.collect(toList());
 	}
 	
 	
