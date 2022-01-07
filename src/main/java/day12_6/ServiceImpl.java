@@ -1,9 +1,11 @@
 package com.study.day12_6;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.concurrent.FutureTask;
 
+import com.google.gson.Gson;
 import com.google.gson.JsonArray;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
@@ -30,11 +32,16 @@ public class ServiceImpl implements Service {
 		// 將 jsonstr 轉為 List<Youbike>
 		// 1. 將字串 jsonstr 轉為可分析的 JsonElement 物件
 		JsonElement je = JsonParser.parseString(jsonstr);
-		// 2. 取得根物件 root
+		// 2. 取得根物件 root -> result -> records
 		JsonObject root = je.getAsJsonObject();
 		JsonObject result = root.getAsJsonObject("result");
 		JsonArray records = result.getAsJsonArray("records");
-		System.out.println(records);
+		//System.out.println(records);
+		// 3. 將 records 轉成靜態陣列 Youbike[]
+		Youbike[] youbikeArray = new Gson().fromJson(records, Youbike[].class);
+		// 4. 透過 Arrays.asList 將靜態陣列轉為動態陣列
+		youbikes = Arrays.asList(youbikeArray);
+		System.out.println(youbikes);
 	}
 	
 	@Override
