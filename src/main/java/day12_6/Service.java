@@ -9,4 +9,6 @@ public interface Service {
 	List<Youbike> queryByGatherThenBemp(Integer amount);
 	void updateYoubikes();
 	void print(List<Youbike> youbikes);
+	
+	List<Youbike> queryByDistance(Double my_lat, Double my_lng, Double m);
 }

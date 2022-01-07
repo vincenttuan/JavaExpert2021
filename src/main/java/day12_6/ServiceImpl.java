@@ -81,4 +81,11 @@ public class ServiceImpl implements Service {
 		}
 	}
 
+	@Override
+	public List<Youbike> queryByDistance(Double my_lat, Double my_lng, Double m) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
 }
