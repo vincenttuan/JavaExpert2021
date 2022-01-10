@@ -65,14 +65,29 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
 	@Override
 	public int update(Integer id, String updateName) {
-		// TODO Auto-generated method stub
-		return 0;
+		int rowcount = 0;
+		String sql = "Update Department set name=? where id=?";
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, updateName);
+			pstmt.setInt(2, id);
+			rowcount = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return rowcount;
 	}
 
 	@Override
 	public int delete(Integer delete_id) {
-		// TODO Auto-generated method stub
-		return 0;
+		int rowcount = 0;
+		String sql = "Delete from Department where id=?";
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, delete_id);
+			rowcount = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return rowcount;
 	}
 
 }
