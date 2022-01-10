@@ -1,6 +1,7 @@
 package com.study.day13_2;
 
 import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -33,8 +34,20 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
 	@Override
 	public Map<String, Object> readById(Integer id) {
-		// TODO Auto-generated method stub
-		return null;
+		Map<String, Object> map = null;
+		String sql = "select id, name from Department where id = ?";
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setInt(1, id);
+			ResultSet rs = pstmt.executeQuery();
+			if(rs.next()) {
+				map = new LinkedHashMap<>();
+				map.put("id", rs.getInt("id"));
+				map.put("name", rs.getString("name"));
+			}
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return map;
 	}
 
 	@Override
