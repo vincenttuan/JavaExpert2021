@@ -10,7 +10,13 @@ public class Test {
 		// 查詢全部
 		List<Map<String, Object>> list = dao.readAll();
 		System.out.println(list);
-		
+		// 查詢單筆
+		Map<String, Object> m1 = dao.readById(1);
+		System.out.println(m1);
+		Map<String, Object> m2 = dao.readById(2);
+		System.out.println(m2);
+		Map<String, Object> m3 = dao.readById(3);
+		System.out.println(m3);
 	}
 
 }

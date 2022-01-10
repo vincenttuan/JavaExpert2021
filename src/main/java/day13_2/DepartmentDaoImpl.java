@@ -52,8 +52,15 @@ public class DepartmentDaoImpl implements DepartmentDao {
 
 	@Override
 	public int create(String name) {
-		// TODO Auto-generated method stub
-		return 0;
+		int rowcount = 0; // 異動筆數
+		String sql = "Insert into Department(name) values(?)";
+		try(PreparedStatement pstmt = conn.prepareStatement(sql)) {
+			pstmt.setString(1, name);
+			rowcount = pstmt.executeUpdate();
+		} catch (Exception e) {
+			System.err.println(e);
+		}
+		return rowcount;
 	}
 
 	@Override
