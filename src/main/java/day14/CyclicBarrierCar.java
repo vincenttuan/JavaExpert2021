@@ -8,7 +8,7 @@ public class CyclicBarrierCar {
 			System.out.println("吃中飯");
 		};
 		
-		int n = 3;
+		int n = 4;
 		CyclicBarrier cb = new CyclicBarrier(n, r);
 		
 		Thread t1 = new Thread(new Car(cb), "A");
