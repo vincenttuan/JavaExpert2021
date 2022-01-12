@@ -17,7 +17,7 @@ public class BufferedWriterDemo {
 			}
 			System.out.println("寫入完成");
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e);
 		}
 	}
 }
