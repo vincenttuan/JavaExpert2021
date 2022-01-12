@@ -1,5 +1,6 @@
 package com.study.day14_2;
 
+import java.io.FileWriter;
 import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -41,6 +42,16 @@ public class OpenWeather {
 		String dt_str = sdf.format(new Date((long)dt*1000));
 		System.out.printf("時間：%d(%s)\n地區：%s\n天氣：%s\n天氣描述：%s\n氣溫：%.2f°C\n體感：%.2f°C\n濕度：%d%%\n",
 						  dt, dt_str, name, main, description, temp, feels_like, humidity);
+		// 將資料存入
+		String dest_path = "src/main/java/com/study/day14_2/files/weather.txt";
+		String data = String.format("時間：%d(%s)\n地區：%s\n天氣：%s\n天氣描述：%s\n氣溫：%.2f°C\n體感：%.2f°C\n濕度：%d%%\n",
+						  dt, dt_str, name, main, description, temp, feels_like, humidity);
+		
+		try(FileWriter fw = new FileWriter(dest_path)) {
+			fw.append(data);
+		} catch (Exception e) {
+			System.out.println(e);
+		}
 	}
 	
 }
