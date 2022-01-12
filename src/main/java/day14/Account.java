@@ -16,7 +16,7 @@ public class Account {
 		this.balance = balance;
 	}
 	// 提款功能 withdraw(提款金額)
-	public void withdraw(int amount) {
+	public synchronized void withdraw(int amount) {
 		String threadName = Thread.currentThread().getName();
 		System.out.printf("%s 開始提款\n", threadName);
 		// 開始提款
